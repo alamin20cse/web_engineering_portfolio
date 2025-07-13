@@ -7,14 +7,12 @@
 </head>
 <body>
 
-  
   <!-- 🌐 Navbar -->
   <nav class="nav">
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
-
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <!-- Profile Header -->
   <header id="profileHeader">
@@ -69,6 +67,38 @@
         <li>Frontend: React, Tailwind, TanStack Query</li>
         <li>Backend: Express.js, MongoDB, JWT</li>
       </ul>
+
+      <!-- Hidden details -->
+      <div id="bd1" style="display: none; margin-top: 10px;">
+        <h4>Technologies Used</h4>
+        <p><strong>Frontend:</strong> React, Tailwind CSS</p>
+        <p><strong>Backend:</strong> Node.js, Express.js, MongoDB</p>
+        <p><strong>Payments:</strong> Stripe</p>
+        <p><strong>Auth:</strong> JWT (JSON Web Tokens)</p>
+        <p><strong>File Upload:</strong> ImageBB API</p>
+
+        <h4>Installation Guide</h4>
+        <pre>
+git clone https://github.com/alamin20cse/Blood-Donation-Client
+cd Blood-Donation-Client
+npm install
+npm start
+        </pre>
+
+        <h4>Backend Tech Stack</h4>
+        <ul>
+          <li>Node.js & Express.js - Backend framework</li>
+          <li>MongoDB Atlas - NoSQL Database</li>
+          <li>JWT Authentication - Secure user authentication</li>
+          <li>Stripe - Payment gateway integration</li>
+          <li>dotenv - Environment variable management</li>
+          <li>cors & cookie-parser - Handling CORS & HTTP cookies</li>
+        </ul>
+      </div>
+
+      <!-- Toggle button -->
+      <button id="toggleBd1" style="margin-top: 10px;">See more</button>
+
       <p class="links">
         <a href="https://blood-donation-applicati-9d609.web.app" target="_blank">Live Demo</a> |
         <a href="https://github.com/alamin20cse/Blood-Donation-Client" target="_blank">Frontend Code</a> |
@@ -101,7 +131,7 @@
     <p>Location: Pabna, Rajshahi, Bangladesh</p>
   </section>
 
-  <!-- Quick Links -->
+  <!-- Footer -->
   <footer class="footer">
     <p>
       <a href="#about">About</a> |
@@ -109,6 +139,22 @@
       <a href="#contact">Contact</a>
     </p>
   </footer>
+
+  <!-- Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById("toggleBd1");
+    const bd1 = document.getElementById("bd1");
+
+    toggleBtn.addEventListener("click", function () {
+      if (bd1.style.display === "none") {
+        bd1.style.display = "block";
+        toggleBtn.textContent = "See less";
+      } else {
+        bd1.style.display = "none";
+        toggleBtn.textContent = "See more";
+      }
+    });
+  </script>
 
 </body>
 </html>
