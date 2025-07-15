@@ -6,8 +6,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- 🌐 Navbar -->
+  
+  
+  <!-- Navbar -->
   <nav class="nav">
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
@@ -16,7 +17,7 @@
 
   <!-- Profile Header -->
   <header id="profileHeader">
-    <img id="profilePhoto" src="img/alamin001.jpg" alt="Md. Al-Amin Hossain">
+    <img id="profilePhoto" src="img/alamin001.jpg" alt="Md. Al-Amin Hossain" />
     <h1>Md. Al-Amin Hossain 👋</h1>
     <p class="subtitle">Frontend Developer | React.js | Tailwind CSS</p>
     <p class="links">
@@ -58,67 +59,76 @@
   <section class="section" id="projects">
     <h2>Projects</h2>
 
+    <!-- Project 1 -->
     <div class="project">
       <h3>🩸 Blood Donation Management System</h3>
-      <img src="img/BloodDonation.jpg" alt="Blood Donation Project">
-      <p>A complete web platform connecting blood donors with recipients. Features include request handling, authentication, and Stripe payment.</p>
+      <img src="img/BloodDonation.jpg" alt="Blood Donation Project" />
+      <p>A complete web platform connecting blood donors with recipients.</p>
       <ul>
         <li>JWT Auth, Stripe, Role-Based Access</li>
-        <li>Frontend: React, Tailwind, TanStack Query</li>
-        <li>Backend: Express.js, MongoDB, JWT</li>
+        <li>Frontend: React, Tailwind</li>
+        <li>Backend: Express.js, MongoDB</li>
       </ul>
 
-      <!-- Hidden details -->
-      <div id="bd1" style="display: none; margin-top: 10px;">
+
+      
+      <div id="details1" class="details">
         <h4>Technologies Used</h4>
         <p><strong>Frontend:</strong> React, Tailwind CSS</p>
         <p><strong>Backend:</strong> Node.js, Express.js, MongoDB</p>
         <p><strong>Payments:</strong> Stripe</p>
-        <p><strong>Auth:</strong> JWT (JSON Web Tokens)</p>
-        <p><strong>File Upload:</strong> ImageBB API</p>
+        <p><strong>Auth:</strong> JWT</p>
+        <p><strong>Upload:</strong> ImageBB</p>
 
-        <h4>Installation Guide</h4>
+        <h4>Install</h4>
         <pre>
 git clone https://github.com/alamin20cse/Blood-Donation-Client
 cd Blood-Donation-Client
 npm install
 npm start
         </pre>
-
-        <h4>Backend Tech Stack</h4>
-        <ul>
-          <li>Node.js & Express.js - Backend framework</li>
-          <li>MongoDB Atlas - NoSQL Database</li>
-          <li>JWT Authentication - Secure user authentication</li>
-          <li>Stripe - Payment gateway integration</li>
-          <li>dotenv - Environment variable management</li>
-          <li>cors & cookie-parser - Handling CORS & HTTP cookies</li>
-        </ul>
       </div>
-
-      <!-- Toggle button -->
-      <button id="toggleBd1" style="margin-top: 10px;">See more</button>
+      <button id="toggleBtn1" class="toggle-btn">See more</button>
 
       <p class="links">
         <a href="https://blood-donation-applicati-9d609.web.app" target="_blank">Live Demo</a> |
-        <a href="https://github.com/alamin20cse/Blood-Donation-Client" target="_blank">Frontend Code</a> |
-        <a href="https://github.com/alamin20cse/Blood-Donation-Server" target="_blank">Backend Code</a>
+        <a href="https://github.com/alamin20cse/Blood-Donation-Client" target="_blank">Frontend</a> |
+        <a href="https://github.com/alamin20cse/Blood-Donation-Server" target="_blank">Backend</a>
       </p>
     </div>
 
+    <!-- Project 2 -->
     <div class="project">
       <h3>🏃 Marathon Management System</h3>
-      <img src="img/marathon.png" alt="Marathon Project">
-      <p>Manage marathon events, registration, and countdown timers with separate user/admin access.</p>
+      <img src="img/marathon.png" alt="Marathon Project" />
+      <p>Manage marathon events, registration, and countdown timers.</p>
       <ul>
         <li>Event Register, JWT Auth, Countdown Timer</li>
         <li>Frontend: React, Tailwind</li>
         <li>Backend: Express.js, MongoDB</li>
       </ul>
+
+      <div id="details2" class="details">
+        <h4>Features</h4>
+        <ul>
+          <li>User/Admin role based dashboards</li>
+          <li>Secure login & registration with Firebase</li>
+          <li>Dynamic routing and private routes</li>
+        </ul>
+        <h4>Installation</h4>
+        <pre>
+git clone https://github.com/alamin20cse/Marathon-Management-System-Client
+cd Marathon-Management-System-Client
+npm install
+npm start
+        </pre>
+      </div>
+      <button id="toggleBtn2" class="toggle-btn">See more</button>
+
       <p class="links">
         <a href="https://marathon-management-syst-7b404.web.app/" target="_blank">Live Demo</a> |
-        <a href="https://github.com/alamin20cse/Marathon-Management-System-Client" target="_blank">Frontend Code</a> |
-        <a href="https://github.com/alamin20cse/Marathon-Management-System-Server" target="_blank">Backend Code</a>
+        <a href="https://github.com/alamin20cse/Marathon-Management-System-Client" target="_blank">Frontend</a> |
+        <a href="https://github.com/alamin20cse/Marathon-Management-System-Server" target="_blank">Backend</a>
       </p>
     </div>
   </section>
@@ -129,6 +139,10 @@ npm start
     <p>Email: md.alamin165086@gmail.com</p>
     <p>Phone: +8801754165086</p>
     <p>Location: Pabna, Rajshahi, Bangladesh</p>
+  </section>
+
+  <section class="section">
+    <button onclick="window.print()">Print this page</button>
   </section>
 
   <!-- Footer -->
@@ -142,19 +156,33 @@ npm start
 
   <!-- Toggle Script -->
   <script>
-    const toggleBtn = document.getElementById("toggleBd1");
-    const bd1 = document.getElementById("bd1");
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleBtn1 = document.getElementById("toggleBtn1");
+      const details1 = document.getElementById("details1");
 
-    toggleBtn.addEventListener("click", function () {
-      if (bd1.style.display === "none") {
-        bd1.style.display = "block";
-        toggleBtn.textContent = "See less";
-      } else {
-        bd1.style.display = "none";
-        toggleBtn.textContent = "See more";
-      }
+      toggleBtn1.addEventListener("click", () => {
+        if (details1.style.display === "block") {
+          details1.style.display = "none";
+          toggleBtn1.textContent = "See more";
+        } else {
+          details1.style.display = "block";
+          toggleBtn1.textContent = "See less";
+        }
+      });
+
+      const toggleBtn2 = document.getElementById("toggleBtn2");
+      const details2 = document.getElementById("details2");
+
+      toggleBtn2.addEventListener("click", () => {
+        if (details2.style.display === "block") {
+          details2.style.display = "none";
+          toggleBtn2.textContent = "See more";
+        } else {
+          details2.style.display = "block";
+          toggleBtn2.textContent = "See less";
+        }
+      });
     });
   </script>
-
 </body>
 </html>
